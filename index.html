@@ -9,32 +9,29 @@
     <title>Examen</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
 </head>
 
 <body>
-    <div class="firstCard">
-        <img src="icon-star.svg" alt="Imagen de una estrella">
+    <div class="feedbackCard">
+        <img src="icon-star.svg" alt="Icono de estrella" class="estrella">
         <h1>¿Cómo lo hicimos?</h1>
         <p>Por favor, haznos saber cómo lo hicimos con tu solicitud de soporte.</p>
-        <p>Todos los comentarios son bienvenidos para ayudarnos a mejorar nuestra oferta!</p>
-        <form action="">
-            <label>
-                <button class="score" value="1">1</button>
-                <button class="score" value="2">2</button>
-                <button class="score" value="3">3</button>
-                <button class="score" value="4">4</button>
-                <button class="score" value="5">5</button>
-                <button type="submit">Enviar</button></label>
-        </form>
+        <p>Todos los comentarios son bienvenidos para ayudarnos a mejorar nuestra oferta.</p>
+        <div class="rating">
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+        </div>
+        <button class="submit-button" id="submit-rating">ENVIAR</button>
     </div>
-    <div class="secondCard">
+
+    <div class="thankyouCard" style="display: none;">
         <img src="illustration-thank-you.svg" alt="Imagen de agradecimiento">
-        <p>Seleccionaste (Valor) de 5</p>
+        <p class="selectedRating">Seleccionaste 4 de 5</p>
         <h1>¡Gracias!</h1>
-        <p>Agradecemos que te hayas tomado el tiempo de dar una calificación</p>
+        <p>Agradecemos que te hayas tomado el tiempo de dar una calificación.</p>
         <p>Si alguna vez necesitas más ayuda, no dudes en volver a ponerte en contacto con nosotros.</p>
     </div>
 </body>

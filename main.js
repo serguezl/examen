@@ -1,32 +1,24 @@
-const form = document.querySelectorAll('.form');
-const input = document.querySelector('.input');
-const buttons = document.querySelectorAll('.button');
-let selectedValue = '';
+// Selección de elementos
+const ratingButtons = document.querySelectorAll('.rating button');
+const submitButton = document.querySelector('.submit-button');
+const feedbackCard = document.querySelector('.feedbackCard');
+const thankYouCard = document.querySelector('.thankyouCard');
+const selectedRatingText = document.querySelector('.selectedRating');
+let selectedRating = null;
 
-function handleButton() {
-    buttons.forEach((button) => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            selectedValue = button.getAttribute('value');
-            if (selectedValue !== '') {
-                main.innerHTML = /*html*/ `
-                        <header>
-                            <img src="img/illustration-thank-you.svg" alt="Imagen de agradecimiento">
-                            <div>
-                                <p>Seleccionaste ${selectedValue} de 5</p>
-                            </div>
-                        </header>
-                        <section>
-                            <h1>¡Gracias!</h1>
-                            <p>Agradecemos que te hayas tomado el tiempo de dar una calificación.</p>
-                            <p>Si alguna vez necesitas más ayuda, no dudes en volver a ponerte en contacto ocn nosotros</p>
-                        </section>
-
-                    `;
-            }
-            console.log(selectedValue);
-        });
+ratingButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        ratingButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+        selectedRating = button.textContent;
     });
-}
+});
 
-handleButton();
+submitButton.addEventListener('click', () => {
+    if (selectedRating) {
+        feedbackCard.style.display = 'none';
+
+        thankYouCard.style.display = 'block';
+        selectedRatingText.textContent = `Seleccionaste ${selectedRating} de 5`;
+    }
+});
