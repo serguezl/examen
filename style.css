@@ -23,7 +23,7 @@ main {
 }
 
 .estrella img {
-    float: left;
+    float: right;
 }
 
 .feedbackCard,
@@ -72,7 +72,6 @@ main {
     color: hsl(0, 0%, 100%);
 }
 
-/* Botón de envío */
 .submit-button {
     background-color: hsl(25, 97%, 53%);
     color: hsl(0, 0%, 100%);
