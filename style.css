@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    background-color: grey;
+
+    img {
+        justify-content: flex-start;
+    }
+}
+
+p {
+    font-size: 15px;
+}
+
+.score {
+    border-radius: 100%;
+}
